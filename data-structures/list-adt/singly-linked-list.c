@@ -6,6 +6,7 @@ typedef struct NodeList {struct Node *head;} NodeList;
 
 
 int lengthLL(NodeList* llist) {
+	//FINDS THE LENGTH OF A LINKED LIST AND RETURNS THE LENGTH AS INTEGER
 	int i = 0;
 	Node* temp = llist->head;
 	while(temp!=NULL) {
@@ -151,6 +152,7 @@ void deletePosition(NodeList* llist,int position) {
 }
 
 Node* linearSearch(NodeList* llist,int match) {
+	//CHECKS WHETHER THE LIST IS EMPTY OR NOT
 	if(llist->head == NULL) {
 		printf("-EMPTY LINKED LIST-\n");
 		return NULL;
@@ -158,7 +160,7 @@ Node* linearSearch(NodeList* llist,int match) {
 	
 	int idx=0;
 	Node* temp = llist->head;
-	
+	//FINDS THE POSITION OF ELEMENT, PRINTS IT AND RETURNS THE ELEMENT
 	while(temp!=NULL) {
 		if(temp->data == match) {
 			printf("THE ELEMENT FOUND AT %d INDEX\n",idx);
@@ -168,6 +170,7 @@ Node* linearSearch(NodeList* llist,int match) {
 		idx++;
 	}
 	printf("-NO ELEMENT HAS BEEN FOUND!-\n");
+	//IF IT DOESNT FIND THE MATCHED ONE, RETURNS NULL
 	return NULL;
 }
 
